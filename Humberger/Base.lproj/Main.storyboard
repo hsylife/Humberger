@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BaseViewController" customModule="Humberger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-Ao-IIk">
+                                <rect key="frame" x="24" y="27" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVF-L7-E5y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="xvu-yE-sHz" kind="presentation" identifier="showMenu" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="med-Dj-tPs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="C5l-Bv-3zX">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="xvu-yE-sHz" customClass="MenuViewController" customModule="Humberger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.0" tag="1" contentMode="scaleToFill" id="Fz2-iH-L1E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5j-GM-CsZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lpd-UF-W6H">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afR-cm-KTi">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uA0-st-XSn">
+                                        <rect key="frame" x="41" y="53" width="43" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="B5j-GM-CsZ" secondAttribute="bottom" id="Lhw-gm-17G"/>
+                            <constraint firstItem="ALx-QC-cin" firstAttribute="trailing" secondItem="B5j-GM-CsZ" secondAttribute="trailing" id="Yya-jh-B66"/>
+                            <constraint firstItem="ALx-QC-cin" firstAttribute="trailing" secondItem="afR-cm-KTi" secondAttribute="trailing" constant="75" id="ZaP-2X-JWi"/>
+                            <constraint firstItem="afR-cm-KTi" firstAttribute="top" secondItem="Fz2-iH-L1E" secondAttribute="top" id="d2C-Ud-iLO"/>
+                            <constraint firstItem="B5j-GM-CsZ" firstAttribute="top" secondItem="Fz2-iH-L1E" secondAttribute="top" id="iNi-UG-JfL"/>
+                            <constraint firstItem="afR-cm-KTi" firstAttribute="bottom" secondItem="ALx-QC-cin" secondAttribute="bottom" id="jze-Yc-4Jm"/>
+                            <constraint firstItem="B5j-GM-CsZ" firstAttribute="leading" secondItem="ALx-QC-cin" secondAttribute="leading" id="tHX-6g-su8"/>
+                            <constraint firstItem="afR-cm-KTi" firstAttribute="leading" secondItem="ALx-QC-cin" secondAttribute="leading" id="ySa-x2-zH5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ALx-QC-cin"/>
+                    </view>
+                    <connections>
+                        <outlet property="blurView" destination="B5j-GM-CsZ" id="7jk-m1-eVC"/>
+                        <outlet property="menuView" destination="afR-cm-KTi" id="OYx-ay-FUQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mov-3c-0q2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="107"/>
+        </scene>
+    </scenes>
+</document>
